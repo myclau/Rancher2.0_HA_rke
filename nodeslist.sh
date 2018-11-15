@@ -1,0 +1,9 @@
+#!/bin/bash
+nodes=(
+	"user@host1"
+	"user@host2"
+	"user@host3"
+	"user@host4"
+	"user@host5"
+	"user@host6"
+)

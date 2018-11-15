@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx:
+    image: "nginx:1.14"
+    volumes:
+      - ./nginx/conf.d/rancher.conf:/etc/nginx/conf.d/rancher.conf
+      - ./cert:/etc/nginx/certs
+    ports:
+      - "80:80"
+      - "443:443"
