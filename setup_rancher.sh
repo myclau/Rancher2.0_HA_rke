@@ -47,8 +47,8 @@ cp ./loadbalancer/cert/myCA.key tls.key
 cp ./loadbalancer/cert/myCA.crt cacerts.pem
 
 kubectl -n cattle-system create secret tls tls-rancher-ingress \
-  --cert=./loadbalancer/cert/myCA.crt \
-  --key=./loadbalancer/cert/myCA.key
+  --cert=tls.crt \
+  --key=tls.key
 
 # if your cert is selfsign (if not remove below command)
 kubectl -n cattle-system create secret generic tls-ca \
