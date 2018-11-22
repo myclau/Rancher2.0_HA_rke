@@ -35,10 +35,16 @@ helm install rancher-stable/rancher \
   --namespace cattle-system \
   --set tls=external \
   --set hostname=<lb domain> \
-  # if your cert is selfsign (if not remove below command)
   --set privateCA=true \
   --set ingress.tls.source=secret 
-  
+#if CA cert use below
+#helm install rancher-stable/rancher \
+#  --version 2018.10.2 \
+#  --name rancher \
+#  --namespace cattle-system \
+#  --set tls=external \
+#  --set hostname=<lb domain>
+
 # you can update the cert location "./loadbalancer/cert/myCA.*"
 cp ./loadbalancer/cert/myCA.crt tls.crt
 cp ./loadbalancer/cert/myCA.key tls.key
