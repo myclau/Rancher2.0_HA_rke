@@ -92,17 +92,17 @@ Mininum:
 4. run ssh_init.sh to ssh-copy-id to all machine 
 5. follow the readme to config the loadbalancer 
 6. cd to ./ loadbalancer in jumpbox and start by docker command or docker compose
-## Install k8s cluster and rancher
+### Install k8s cluster and rancher
 
-Cluster with use rke to install
+Cluster with use rke to install,
 For Rancher (below with install them at the same time) 
-### use helm to install rancher to cluster 
+#### use helm to install rancher to cluster 
 7. update cluster.yml with username , hostaddress (must be ip) 
 8. make sure the `selfsign cert/ CA cert` is place in somewhere in jumpbox
 9. change `cert path` , search and update the `rancher helm chart version` and update `loadbalancer domain` in `setup_rancher.sh`.
 10. run ./setup_rancher.sh to install k8s cluster and install rancher
 
-### use rke to install cluster and rancher (Not recommended as only support up to v2.0.8)
+#### use rke to install cluster and rancher (Not recommended as only support up to v2.0.8)
 7. In our example is using selfsign cert, if you have ca cert please reference this and edit my cluster.yml template first
 ```https://rancher.com/docs/rancher/v2.x/en/installation/ha/rke-add-on/layer-7-lb/#5-download-rke-config-file-template```
 8. update cluster.yml with username , hostaddress (must be ip) , loadbalance address (must be domain) ,cacert.pem get from step 5
