@@ -8,6 +8,7 @@ wget https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar
 tar -zxvf helm-v2.11.0-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/helm
 
+
 chmod +030 /etc/yum.repos.d
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -19,7 +20,5 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 chmod -030 /etc/yum.repos.d
-yum install -y kubectl
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+yum install -y kubectl

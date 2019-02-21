@@ -1,0 +1,33 @@
+nodes:
+  - address: ip1
+    user: ssh-user
+    hostname_override: machinename1
+    role: [etcd]
+
+  - address: ip2
+    user: ssh-user
+    hostname_override: machinename2
+    role: [controlplane]
+
+  - address: ip3
+    user: ssh-user
+    hostname_override: machinename3
+    role: [worker]
+
+  - address: ip4
+    user: ssh-user
+    hostname_override: machinename4
+    role: [worker]
+
+ignore_docker_version: true
+
+ssh_key_path: ./keys/rancher_rsa
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+    extra_args:
+      election-timeout: "10000"
+      heartbeat-interval: "2000"
