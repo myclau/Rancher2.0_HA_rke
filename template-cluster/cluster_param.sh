@@ -1,14 +1,17 @@
 #!/bin/bash
 ssh_key_path="./keys/rancher_rsa"
-etcd=(
+master=(
         "ip1;ssh-user;machinename1"
 )
-controlplane=(
+etcd=(
         "ip2;ssh-user;machinename2"
 )
-worker=(
+controlplane=(
         "ip3;ssh-user;machinename3"
+)
+worker=(
         "ip4;ssh-user;machinename4"
+        "ip5;ssh-user;machinename5"
 )
 machine_domain="host.domain.com"
 rancher_helm_version="2019.1.1"
