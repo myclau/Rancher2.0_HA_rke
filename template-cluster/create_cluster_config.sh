@@ -36,6 +36,7 @@ echo "nodes:" >> cluster.yml
 2darray_operation "$(echo ${etcd[@]})" etcd
 2darray_operation "$(echo ${controlplane[@]})" controlplane
 2darray_operation "$(echo ${worker[@]})" worker
+2darray_operation "$(echo ${master[@]})" "etcd,controlplane"
 
 echo "ignore_docker_version: true" >> cluster.yml
 echo "" >> cluster.yml
